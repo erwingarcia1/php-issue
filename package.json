@@ -1,0 +1,9 @@
+{
+  "name": "minas-ai-website-auditor-tools",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Pinned Lighthouse runtime for MINAS audits",
+  "devDependencies": {
+    "lighthouse": "13.5.0"
+  }
+}

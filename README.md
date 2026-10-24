@@ -23,10 +23,10 @@ python -m venv .venv
 . .venv/bin/activate
 pip install -e '.[dev,google]'
 playwright install chromium
-npm install -g lighthouse
+npm ci
 ```
 
-Google dependencies and Lighthouse are optional. Without Lighthouse, its finding is recorded as skipped. Without Google dependencies, local reports still work and Google export returns a clear error.
+Google dependencies and Lighthouse are optional. `npm ci` installs the pinned Lighthouse CLI locally. Without Lighthouse, its finding is recorded as skipped. Without Google dependencies, local reports still work and Google export returns a clear error.
 
 ## Run
 

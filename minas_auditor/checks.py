@@ -192,7 +192,8 @@ def security_headers(response: httpx.Response, authorization_evidence: str) -> F
 
 
 def lighthouse(url: str, output_path: Path, timeout: float) -> Finding:
-    executable = shutil.which("lighthouse")
+    local_executable = Path.cwd() / "node_modules" / ".bin" / "lighthouse"
+    executable = shutil.which("lighthouse") or (str(local_executable) if local_executable.is_file() else None)
     if executable is None:
         return Finding("lighthouse", Status.SKIPPED, "Lighthouse CLI is not installed", "Install with: npm install -g lighthouse", Confidence.HIGH)
     command = [executable, url, "--quiet", "--chrome-flags=--headless --no-sandbox", "--only-categories=performance", "--output=json", f"--output-path={output_path}"]
