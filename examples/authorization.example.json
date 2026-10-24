@@ -1,0 +1,8 @@
+{
+  "owner": "Example Business LLC",
+  "domains": ["example.com"],
+  "expires_at": "2027-01-01T00:00:00Z",
+  "scope": ["owner_approved_security_headers"],
+  "signature": "HMAC_SHA256_OF_CANONICAL_DOCUMENT_WITHOUT_SIGNATURE"
+}
+
